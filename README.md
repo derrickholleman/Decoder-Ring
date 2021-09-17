@@ -19,4 +19,3 @@ An encoded message after providing a substitution alphabet in the Substitution C
 * Bootstrap
 * Mocha as a testing framework with Node
 * Chai assertion library in conjuction with Mocha
-* NYC as a coverage tool for unit testing
