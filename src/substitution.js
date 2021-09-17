@@ -43,8 +43,5 @@ function substitution(input, alphabet, encode = true) {
 
   return result;
 }
-console.log(substitution("thinkful", "xoyqmcgrukswaflnthdjpzibev"));
 
 module.exports = { substitution };
-
-// jrufscpw = thinkful

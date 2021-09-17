@@ -37,6 +37,4 @@ function caesar(input, shift, encode = true) {
   return encodedMessage;
 }
 
-console.log(caesar("hello!@", 8));
-
 module.exports = { caesar };

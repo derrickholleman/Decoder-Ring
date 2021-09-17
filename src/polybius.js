@@ -82,6 +82,5 @@ function polybius(input, encode = true) {
       .join("")
   );
 }
-console.log(polybius("good dog"));
 
 module.exports = {polybius}
