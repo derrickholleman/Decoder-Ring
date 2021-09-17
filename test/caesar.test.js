@@ -1,5 +1,5 @@
-const { caesar } = require("../src/caesar");
-const { expect } = require("chai");
+const {caesar} = require('../src/caesar')
+const {expect} = require('chai')
 
 describe("caesar", () => {
   it("should return an encoded message if given a string of alphabetical letters", () => {

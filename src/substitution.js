@@ -1,17 +1,25 @@
-function substitution(input, alphabet, encode = true) {
+// Please refrain from tampering with the setup code provided here,
+// as the index.html and test files rely on this setup to work properly.
+// Only add code (e.g., helper methods, variables, etc.) within the scope
+// of the anonymous function on line 6
 
-  // check if alphabet was entered and that it has the proper length
-  if (!alphabet || alphabet.length !== 26) {
+const substitutionModule = (function () {
+  
+
+  function substitution(input, alphabet, encode = true) {
+    
+    if (!alphabet || alphabet.length !== 26) {
     return false;
   }
-  // verify that the alphabet has no duplicate letters
-  let verifyNoDuplicates = alphabet.split("").some((v, i, a) => {
+    
+    let verifyNoDuplicates = alphabet.split("").some((v, i, a) => {
     return a.lastIndexOf(v) != i;
   });
+    
   if (verifyNoDuplicates === true) {
     return false;
   }
-
+    
   let alpha = "abcdefghijklmnopqrstuvwxyz";
   let word = input.toLowerCase();
   let result = "";
@@ -21,10 +29,8 @@ function substitution(input, alphabet, encode = true) {
     let index;
 
     if (encode === true) {
-      // currentChar is character at current index in for loop
       currentChar = word.charAt(i);
       index = alpha.indexOf(currentChar);
-      // check for non alphabetical characters (they have index of -1)
       if (index === -1) {
         result += currentChar;
       } else {
@@ -42,6 +48,11 @@ function substitution(input, alphabet, encode = true) {
   }
 
   return result;
-}
+  }
 
-module.exports = { substitution };
+  return {
+    substitution,
+  };
+})();
+
+module.exports = { substitution: substitutionModule.substitution };

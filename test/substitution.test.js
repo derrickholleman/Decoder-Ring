@@ -1,5 +1,5 @@
-const {substitution} = require("../src/substitution")
-const {expect} = require("chai")
+const {substitution} = require('../src/substitution')
+const {expect} = require('chai')
 
 describe("substitution", () => {
     it("should encode a message if given a string input and valid alphabet", () => {

@@ -1,8 +1,14 @@
-function polybius(input, encode = true) {
-  // check for odd number length of input
-  if(!encode){
+// Please refrain from tampering with the setup code provided here,
+// as the index.html and test files rely on this setup to work properly.
+// Only add code (e.g., helper methods, variables, etc.) within the scope
+// of the anonymous function on line 6
 
-    charCount = 0;
+const polybiusModule = (function () {
+
+  function polybius(input, encode = true) {
+    if(!encode){
+
+    let charCount = 0;
 
     for (let char of input){
       if(char.charCodeAt() !== 32)
@@ -14,7 +20,6 @@ function polybius(input, encode = true) {
     }
 }
 
-  // an object with key/value pairs of letters and their corresponding numbers to be used with the encoding process.
   const encoder = {
     a: 11,
     b: 21,
@@ -43,7 +48,7 @@ function polybius(input, encode = true) {
     y: 45,
     z: 55,
   };
-  // an object with key/value pairs of numbers and their corresponding letters that will be used in the decoding process.
+
   const decoder = {
     11: "a",
     21: "b",
@@ -76,11 +81,15 @@ function polybius(input, encode = true) {
 
   return (
     input.toLowerCase()
-      // match for numbers, exactly 2 times, search thru a-z, preserve spaces, search globally
+      // match for numbers, exactly 2 times, search a-z, preserve spaces, search globally
       .match(/[0-9]{2}|[a-z]|\s/g)
       .map((character) => direction[character] || character)
-      .join("")
-  );
-}
+      .join(""))
+  }
 
-module.exports = {polybius}
+  return {
+    polybius,
+  };
+})();
+
+module.exports = { polybius: polybiusModule.polybius };

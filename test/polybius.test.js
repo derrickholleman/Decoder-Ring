@@ -1,5 +1,5 @@
-const {polybius} = require("../src/polybius")
-const {expect} = require("chai")
+const {polybius} = require('../src/polybius')
+const {expect} = require('chai')
 
 describe("polybius", () => {
     it("should translate the letters i and j to 42", () => {
